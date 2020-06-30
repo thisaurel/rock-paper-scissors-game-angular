@@ -11,6 +11,8 @@ export class GameComponent implements OnInit {
 
   public listOfChoices = this.gameService.items;
 
+  public winner = 'Please make your choice';
+
   constructor(
     public gameService: GameService,
   ) { }
@@ -22,6 +24,20 @@ export class GameComponent implements OnInit {
     this.visualChanges(item);
     this.gameService.callPlayerChoice(item);
     console.log(this.gameService.isPlayerWins());
+    switch (this.gameService.isPlayerWins()) {
+      case true:
+        this.winner = 'You won. Congrats. *Execute order 66*';
+        this.gameService.addVictory(this.gameService.connectedPlayer);
+        break;
+      case false:
+        this.winner = 'HAHAHA YOU NOOB !!! I WIIIIN';
+        this.gameService.addDefeat(this.gameService.connectedPlayer);
+        break;
+      default:
+        this.winner = 'Oh, okay. It\'s a draw. C\'mon we both won, right ?';
+        this.gameService.addDraw(this.gameService.connectedPlayer);
+        break;
+    }
   }
 
   public visualChanges(item: ItemsInterface): void {

@@ -1,5 +1,6 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import { ItemsInterface } from '../interfaces/items.interface';
+import {GameResultsInterface} from '../interfaces/game-results.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,9 @@ export class GameService {
   // tslint:disable-next-line:variable-name
   private _computerChoice: ItemsInterface;
 
+  // tslint:disable-next-line:variable-name
+  private _scoreBoard = new Array<GameResultsInterface>();
+
   constructor() {
     this.setPlayerName('Aurélien');
   }
@@ -23,6 +27,14 @@ export class GameService {
     if (typeof name === 'string') {
       this._connectedPlayer = name;
       this.onPlayerConnect.emit(this._connectedPlayer);
+      if (this.connectedPlayer) {
+        this._scoreBoard.push({
+          playerName: name,
+          victories: 0,
+          defeats: 0,
+          draws: 0
+        });
+      }
     }
   }
 
@@ -60,6 +72,39 @@ export class GameService {
     }
   }
 
+  public logout(): boolean {
+    this.setPlayerName('');
+    return (this.connectedPlayer === '');
+  }
+
+  public addVictory(player: string): void {
+    const playerIndex = this.scoreBoard.findIndex((sc) => sc.playerName === player, 1);
+    this.scoreBoard[playerIndex].victories++;
+    this.scoreBoard[playerIndex].percentage =
+      this.calcPercentage(this.scoreBoard[playerIndex].victories, this.scoreBoard[playerIndex].defeats, this.scoreBoard[playerIndex].draws);
+  }
+
+  public addDefeat(player: string): void {
+    const playerIndex = this.scoreBoard.findIndex((sc) => sc.playerName === player, 1);
+    this.scoreBoard[playerIndex].defeats++;
+    this.scoreBoard[playerIndex].percentage =
+      this.calcPercentage(this.scoreBoard[playerIndex].victories, this.scoreBoard[playerIndex].defeats, this.scoreBoard[playerIndex].draws);
+  }
+
+  public addDraw(player: string): void {
+    const playerIndex = this.scoreBoard.findIndex((sc) => sc.playerName === player, 1);
+    this.scoreBoard[playerIndex].draws++;
+  }
+
+  private calcPercentage(victories: number, defeats: number, draws: number): number {
+    const sum = victories + defeats + draws;
+    return (victories / sum) * 100;
+  }
+
+  get scoreBoard(): GameResultsInterface[] {
+    return this._scoreBoard;
+  }
+
   private draw(): boolean {
     return null;
   }
@@ -72,9 +117,28 @@ export class GameService {
     return false;
   }
 
-  public logout(): boolean {
-    this.setPlayerName('');
-    return (this.connectedPlayer === '');
+  get connectedPlayer(): string {
+    return this._connectedPlayer;
+  }
+
+  get getPlayerChoice(): ItemsInterface {
+    return this._playerChoice;
+  }
+
+  public setPlayerChoice(value: ItemsInterface) {
+    this._playerChoice = value;
+  }
+
+  get getComputerChoice(): ItemsInterface {
+    return this._computerChoice;
+  }
+
+  public setComputerChoice(value: ItemsInterface) {
+    this._computerChoice = value;
+  }
+
+  get computerChoice(): ItemsInterface {
+    return this._computerChoice;
   }
 
   get items(): ItemsInterface[] {
@@ -107,26 +171,6 @@ export class GameService {
         drawWith: 2,
       },
     ];
-  }
-
-  get connectedPlayer(): string {
-    return this._connectedPlayer;
-  }
-
-  get getPlayerChoice(): ItemsInterface {
-    return this._playerChoice;
-  }
-
-  public setPlayerChoice(value: ItemsInterface) {
-    this._playerChoice = value;
-  }
-
-  get getComputerChoice(): ItemsInterface {
-    return this._computerChoice;
-  }
-
-  public setComputerChoice(value: ItemsInterface) {
-    this._computerChoice = value;
   }
 
 }

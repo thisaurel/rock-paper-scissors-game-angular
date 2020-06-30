@@ -3,4 +3,5 @@ export interface GameResultsInterface {
   victories?: number;
   defeats?: number;
   draws?: number;
+  percentage?: number;
 }
