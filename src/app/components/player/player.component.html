@@ -1,0 +1,13 @@
+<div class="auth-block">
+
+  <form class="form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <h2>Choose your player name my friend !</h2>
+
+    <mat-form-field class="full-width">
+      <mat-label>Type your username</mat-label>
+      <input matInput placeholder="Type your username" type="text" formControlName="username">
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit" [disabled]="!authForm.valid">I WANNA PLAY NOW</button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+.container {
+  padding: 25px;
+}
+.menu-spacer {
+  margin-right: 25px;
+}
+.title-selector {
+  cursor: pointer;
+}
+.right {
+  position: absolute;
+  right: 20px;
+  .username {
+    font-size: 16px;
+  }
+  .logout {
+    margin-left: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
