@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GameService} from './services/game.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,17 @@ import {GameService} from './services/game.service';
 export class AppComponent implements OnInit {
 
   constructor(
-    public gameService: GameService
+    public gameService: GameService,
+    private router: Router,
   ) {
   }
 
-
   ngOnInit() {
+  }
+
+  public logout(): void {
+    this.gameService.logout();
+    this.router.navigate(['/player']);
   }
 
 }

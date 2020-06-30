@@ -1,6 +1,8 @@
 .game {
   display: flex;
+  flex: 0 0 100%;
   .player {
+    flex: 1;
     .inline-choice {
       display: flex;
       .image {
@@ -19,6 +21,9 @@
     }
   }
   .computer {
-
+    flex: 1;
+  }
+  .scoreboard {
+    flex: 1;
   }
 }

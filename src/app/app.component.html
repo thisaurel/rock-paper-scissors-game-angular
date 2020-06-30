@@ -7,7 +7,7 @@
   </div>
   <div class="right" *ngIf="gameService.connectedPlayer">
     <a mat-button> {{ (gameService.connectedPlayer) ? gameService.connectedPlayer : 'Non connecté(e)' }} </a>
-    <mat-icon class="logout" (click)="gameService.logout()">exit_to_app</mat-icon>
+    <mat-icon class="logout" (click)="logout()">exit_to_app</mat-icon>
   </div>
 </mat-toolbar-row>
 </mat-toolbar>
