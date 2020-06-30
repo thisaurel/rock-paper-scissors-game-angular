@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GameService} from '../../services/game.service';
+import {ItemsInterface} from '../../interfaces/items.interface';
 
 @Component({
   selector: 'app-game',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    protected gameService: GameService,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  public makeChoice(item: ItemsInterface): void {
+    this.gameService.callPlayerChoice(item);
+    console.log(this.gameService.isPlayerWins());
   }
 
 }

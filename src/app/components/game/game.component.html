@@ -1,1 +1,24 @@
-<p>game works!</p>
+<div class="game">
+  <div class="player">
+    <h2>Player: {{ gameService.connectedPlayer }}</h2>
+
+    <div class="inline-choice">
+      <div class="image" *ngFor="let item of gameService.items">
+        <img [src]="item.img" [alt]="item.name" class="src" (click)="makeChoice(item)">
+      </div>
+    </div>
+  </div>
+  <div class="computer">
+    <h2>Computer</h2>
+    <div class="inline-choice" *ngIf="gameService.getComputerChoice != null">
+      <div class="image">
+        <img [src]="gameService.getComputerChoice.img" [alt]="gameService.getComputerChoice.name" class="src">
+      </div>
+    </div>
+    <div class="no-choice">
+
+    </div>
+  </div>
+</div>
+
+

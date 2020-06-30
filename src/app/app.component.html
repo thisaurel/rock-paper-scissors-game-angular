@@ -3,6 +3,7 @@
   <span class="menu-spacer"></span>
   <div>
     <a mat-button [routerLink]="'/player'" *ngIf="!gameService.connectedPlayer"> Player access </a>
+    <a mat-button [routerLink]="'/game'" *ngIf="gameService.connectedPlayer"> Game access </a>
   </div>
   <div class="right" *ngIf="gameService.connectedPlayer">
     <a mat-button> {{ (gameService.connectedPlayer) ? gameService.connectedPlayer : 'Non connecté(e)' }} </a>
