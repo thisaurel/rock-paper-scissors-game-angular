@@ -19,9 +19,7 @@ export class GameService {
   // tslint:disable-next-line:variable-name
   private _scoreBoard = new Array<GameResultsInterface>();
 
-  constructor() {
-    this.setPlayerName('Aurélien');
-  }
+  constructor() { }
 
   public setPlayerName(name: string): void {
     if (typeof name === 'string') {
@@ -77,21 +75,34 @@ export class GameService {
     return (this.connectedPlayer === '');
   }
 
-  public changeScoreBoard(player: string, type: string): void {
+  public changeScoreBoard(player: string, type: boolean): void {
     const playerIndex = this.scoreBoard.findIndex((sc) => sc.playerName === player, 1);
     switch (type) {
-      case 'win':
+      case true:
         this.scoreBoard[playerIndex].victories++;
         break;
-      case 'loose':
+      case false:
         this.scoreBoard[playerIndex].defeats++;
         break;
-      case 'draw':
+      default:
         this.scoreBoard[playerIndex].draws++;
         break;
     }
     this.scoreBoard[playerIndex].percentage =
       this.calcPercentage(this.scoreBoard[playerIndex].victories, this.scoreBoard[playerIndex].defeats, this.scoreBoard[playerIndex].draws);
+    this.scoreBoard.sort(this.dynamicSort('percentage'));
+  }
+
+  private dynamicSort(property): (a, b) => number {
+    let sortOrder = 1;
+    if (property[0] === '-') {
+      sortOrder = -1;
+      property = property.substr(1);
+    }
+    return (a, b) => {
+      const result = (a[property] > b[property]) ? -1 : (a[property] < b[property]) ? 1 : 0;
+      return result * sortOrder;
+    };
   }
 
   private calcPercentage(victories: number, defeats: number, draws: number): number {

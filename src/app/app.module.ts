@@ -12,6 +12,7 @@ import {GameComponent} from './components/game/game.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {HomeComponent} from './components/home/home.component';
+import { PreventLoggedInAccessService } from './services/prevent-logged-in-access.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {HomeComponent} from './components/home/home.component';
     MatIconModule,
     MatToolbarModule,
   ],
-  providers: [GameService],
+  providers: [GameService, PreventLoggedInAccessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

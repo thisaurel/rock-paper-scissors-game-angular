@@ -1,8 +1,10 @@
-<h1>{{ winner }}</h1>
-<hr>
+<div class="result" [@growTextAnimation]="winner != null ? 'final' : 'initial'">
+  <h1>{{ winner }}</h1>
+</div>
 <div class="game">
   <div class="player">
-    <h2>Player {{ gameService.connectedPlayer }}:</h2>
+    <h2>Player {{ gameService.connectedPlayer }}: (Score: {{ score[0] }})</h2>
+    <p>To start playing, select rock, paper or scissors</p>
 
     <div class="inline-choice">
       <div class="image" *ngFor="let item of listOfChoices" [class.selected]="item.selected">
@@ -11,8 +13,9 @@
     </div>
   </div>
   <div class="computer">
-    <h2>Computer:</h2>
-    <div class="inline-choice" *ngIf="gameService.getComputerChoice != null">
+    <h2>Computer: (Score: {{ score[1] }})</h2>
+    <p>&nbsp;</p>
+    <div class="inline-choice" *ngIf="gameService.getComputerChoice != null && winner != ''">
       <div class="image">
         <img [src]="gameService.getComputerChoice.img" [alt]="gameService.getComputerChoice.name" class="src">
       </div>
@@ -23,13 +26,13 @@
   </div>
   <div class="scoreboard">
     <h2>Scoreboard:</h2>
-    <table>
+    <table class="table">
       <tr>
         <th>Player</th>
         <th>Victories</th>
         <th>Defeats</th>
         <th>Draws</th>
-        <th>Percentage</th>
+        <th>Win rate</th>
       </tr>
       <tr *ngFor="let player of gameService.scoreBoard">
         <td>{{ player.playerName }}</td>
