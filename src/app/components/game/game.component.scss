@@ -1,12 +1,24 @@
-.inline-choice {
+.game {
   display: flex;
-  .image {
-    margin-right: 10px;
-    :last-child {
-      margin-right: 0;
+  .player {
+    .inline-choice {
+      display: flex;
+      .image {
+        filter: grayscale(100%);
+        margin-right: 10px;
+        :last-child {
+          margin-right: 0;
+        }
+        &.selected {
+          filter: grayscale(0%);
+        }
+        img {
+          cursor: pointer;
+        }
+      }
     }
-    img {
-      cursor: pointer;
-    }
+  }
+  .computer {
+
   }
 }

@@ -1,15 +1,15 @@
 <div class="game">
   <div class="player">
-    <h2>Player: {{ gameService.connectedPlayer }}</h2>
+    <h2>Player {{ gameService.connectedPlayer }}:</h2>
 
     <div class="inline-choice">
-      <div class="image" *ngFor="let item of gameService.items">
+      <div class="image" *ngFor="let item of listOfChoices" [class.selected]="item.selected">
         <img [src]="item.img" [alt]="item.name" class="src" (click)="makeChoice(item)">
       </div>
     </div>
   </div>
   <div class="computer">
-    <h2>Computer</h2>
+    <h2>Computer:</h2>
     <div class="inline-choice" *ngIf="gameService.getComputerChoice != null">
       <div class="image">
         <img [src]="gameService.getComputerChoice.img" [alt]="gameService.getComputerChoice.name" class="src">
