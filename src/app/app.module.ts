@@ -9,6 +9,8 @@ import { PlayerComponent } from './components/player/player.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { GameService } from './services/game.service';
 import {GameComponent} from './components/game/game.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import {GameComponent} from './components/game/game.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatToolbarModule,
   ],
   providers: [GameService],
   bootstrap: [AppComponent]
