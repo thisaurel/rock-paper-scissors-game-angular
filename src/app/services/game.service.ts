@@ -92,6 +92,19 @@ export class GameService {
     }
     this.scoreBoard[playerIndex].percentage =
       this.calcPercentage(this.scoreBoard[playerIndex].victories, this.scoreBoard[playerIndex].defeats, this.scoreBoard[playerIndex].draws);
+    this.scoreBoard.sort(this.dynamicSort('percentage'));
+  }
+
+  private dynamicSort(property) {
+    let sortOrder = 1;
+    if (property[0] === '-') {
+      sortOrder = -1;
+      property = property.substr(1);
+    }
+    return (a, b) => {
+      const result = (a[property] > b[property]) ? -1 : (a[property] < b[property]) ? 1 : 0;
+      return result * sortOrder;
+    };
   }
 
   private calcPercentage(victories: number, defeats: number, draws: number): number {
