@@ -27,15 +27,15 @@ export class GameComponent implements OnInit {
     switch (this.gameService.isPlayerWins()) {
       case true:
         this.winner = 'You won. Congrats. *Execute order 66*';
-        this.gameService.addVictory(this.gameService.connectedPlayer);
+        this.gameService.changeScoreBoard(this.gameService.connectedPlayer, 'win');
         break;
       case false:
         this.winner = 'HAHAHA YOU NOOB !!! I WIIIIN';
-        this.gameService.addDefeat(this.gameService.connectedPlayer);
+        this.gameService.changeScoreBoard(this.gameService.connectedPlayer, 'loose');
         break;
       default:
         this.winner = 'Oh, okay. It\'s a draw. C\'mon we both won, right ?';
-        this.gameService.addDraw(this.gameService.connectedPlayer);
+        this.gameService.changeScoreBoard(this.gameService.connectedPlayer, 'draw');
         break;
     }
   }

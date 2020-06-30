@@ -77,23 +77,21 @@ export class GameService {
     return (this.connectedPlayer === '');
   }
 
-  public addVictory(player: string): void {
+  public changeScoreBoard(player: string, type: string): void {
     const playerIndex = this.scoreBoard.findIndex((sc) => sc.playerName === player, 1);
-    this.scoreBoard[playerIndex].victories++;
+    switch (type) {
+      case 'win':
+        this.scoreBoard[playerIndex].victories++;
+        break;
+      case 'loose':
+        this.scoreBoard[playerIndex].defeats++;
+        break;
+      case 'draw':
+        this.scoreBoard[playerIndex].draws++;
+        break;
+    }
     this.scoreBoard[playerIndex].percentage =
       this.calcPercentage(this.scoreBoard[playerIndex].victories, this.scoreBoard[playerIndex].defeats, this.scoreBoard[playerIndex].draws);
-  }
-
-  public addDefeat(player: string): void {
-    const playerIndex = this.scoreBoard.findIndex((sc) => sc.playerName === player, 1);
-    this.scoreBoard[playerIndex].defeats++;
-    this.scoreBoard[playerIndex].percentage =
-      this.calcPercentage(this.scoreBoard[playerIndex].victories, this.scoreBoard[playerIndex].defeats, this.scoreBoard[playerIndex].draws);
-  }
-
-  public addDraw(player: string): void {
-    const playerIndex = this.scoreBoard.findIndex((sc) => sc.playerName === player, 1);
-    this.scoreBoard[playerIndex].draws++;
   }
 
   private calcPercentage(victories: number, defeats: number, draws: number): number {
