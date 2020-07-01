@@ -6,11 +6,18 @@ describe('PreventLoggedInAccessService', () => {
   let service: PreventLoggedInAccessService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [ PreventLoggedInAccessService ]
+    });
     service = TestBed.inject(PreventLoggedInAccessService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should block page access', () => {
+    expect(service.canActivate()).toBeFalsy();
+  });
+
 });

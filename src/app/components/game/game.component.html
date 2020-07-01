@@ -3,8 +3,8 @@
 </div>
 <div class="game">
   <div class="player">
-    <h2>Player {{ gameService.connectedPlayer }}: (Score: {{ score[0] }})</h2>
-    <p>To start playing, select rock, paper or scissors</p>
+    <h2 id="player-title">Player {{ gameService.connectedPlayer }}: (Score: {{ score[0] }})</h2>
+    <p id="instructions">To start playing, select rock, paper or scissors</p>
 
     <div class="inline-choice">
       <div class="image" *ngFor="let item of listOfChoices" [class.selected]="item.selected">
@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="computer">
-    <h2>Computer: (Score: {{ score[1] }})</h2>
+    <h2 id="computer-title">Computer: (Score: {{ score[1] }})</h2>
     <p>&nbsp;</p>
     <div class="inline-choice" *ngIf="gameService.getComputerChoice != null && winner != ''">
       <div class="image">
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="scoreboard">
-    <h2>Scoreboard:</h2>
+    <h2 id="scoreboard-title">Scoreboard:</h2>
     <table class="table">
       <tr>
         <th>Player</th>

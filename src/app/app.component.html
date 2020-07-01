@@ -1,12 +1,12 @@
 <mat-toolbar color="primary"><mat-toolbar-row>
-  <h1 class="title-selector" [routerLink]="'/'">Rock Paper Scissors: The Game !</h1>
+  <h1 class="title-selector" [routerLink]="'/'">Rock Paper Scissors: The Game</h1>
   <span class="menu-spacer"></span>
   <div>
-    <a mat-button [routerLink]="'/player'" *ngIf="!gameService.connectedPlayer"> Player access </a>
-    <a mat-button [routerLink]="'/game'" *ngIf="gameService.connectedPlayer"> Game access </a>
+    <a id="player-link" mat-button [routerLink]="'/player'" *ngIf="!gameService.connectedPlayer"> Player access </a>
+    <a id="game-link" mat-button [routerLink]="'/game'" *ngIf="gameService.connectedPlayer"> Game access </a>
   </div>
   <div class="right" *ngIf="gameService.connectedPlayer">
-    <a mat-button> {{ (gameService.connectedPlayer) ? gameService.connectedPlayer : 'Non connecté(e)' }} </a>
+    <a mat-button id="player-name-link">{{ (gameService.connectedPlayer) ? gameService.connectedPlayer : 'Non connecté(e)' }} </a>
     <mat-icon class="logout" (click)="logout()">exit_to_app</mat-icon>
   </div>
 </mat-toolbar-row>

@@ -105,7 +105,7 @@ export class GameService {
     };
   }
 
-  private calcPercentage(victories: number, defeats: number, draws: number): number {
+  public calcPercentage(victories: number, defeats: number, draws: number): number {
     const sum = victories + defeats + draws;
     return (victories / sum) * 100;
   }

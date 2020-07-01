@@ -1,8 +1,14 @@
-import { TestBed, async } from '@angular/core/testing';
+import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import {HomeComponent} from './components/home/home.component';
+import {GameService} from './services/game.service';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let gameService: GameService;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -11,25 +17,34 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [ GameService ]
     }).compileComponents();
+    gameService = TestBed.inject(GameService);
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    gameService = new GameService();
+    fixture.detectChanges();
+  });
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'rock-paper-scissors-game-angular'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('rock-paper-scissors-game-angular');
+  it('should have toolbar title', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1.title-selector').textContent).toContain('Rock Paper Scissors: The Game');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('rock-paper-scissors-game-angular app is running!');
+  it('should have links in toolbar when user is not sign in', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('a#player-link').textContent).toContain('Player access');
+    expect(compiled.querySelector('a#game-link')).toBeFalsy();
+    expect(compiled.querySelector('a#player-name-link')).toBeFalsy();
+    expect(compiled.querySelector('mat-icon.logout')).toBeFalsy();
   });
+
 });

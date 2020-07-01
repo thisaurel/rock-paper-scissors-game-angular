@@ -69,7 +69,7 @@ export class GameComponent implements OnInit {
     this.listOfChoices.forEach((e) => e.selected = false);
   }
 
-  public endAnimation() {
+  public endAnimation(): void {
     setTimeout(() => {
       this.winner = '';
       this.visualChanges();

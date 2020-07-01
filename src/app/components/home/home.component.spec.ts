@@ -22,4 +22,15 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render start btn', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button').textContent).toContain('Start playing now');
+  });
+
+  it('should have rules displayed', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('I guess you already know how to play. When in doubt, here are the rules:');
+    expect(compiled.querySelector('img').src).toContain('assets/imgs/rules.png');
+  });
 });
