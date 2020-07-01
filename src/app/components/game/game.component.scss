@@ -1,3 +1,18 @@
+.result {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 97%;
+  height: 80%;
+  h1 {
+    font-size: 45px;
+    position: relative;
+    line-height: 80px;
+    top: 50%;
+    background: #8080803d;
+  }
+}
 .game {
   display: flex;
   flex: 0 0 100%;
@@ -28,6 +43,23 @@
     table {
       width: 100%;
       text-align: left;
+      border: solid 1px #DDEEEE;
+      border-collapse: collapse;
+      border-spacing: 0;
+      thead th {
+        background-color: #DDEFEF;
+        border: solid 1px #DDEEEE;
+        color: #336B6B;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+      }
+      tbody td {
+        border: solid 1px #DDEEEE;
+        color: #333;
+        padding: 10px;
+        text-shadow: 1px 1px 1px #fff;
+      }
     }
   }
 }
