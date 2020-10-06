@@ -1,5 +1,8 @@
 # Rock Paper Scissors Game
 
+[![npm version](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/survey-monkey-streams)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/233ac41a-c3df-419f-883c-02bb2a137586/deploy-status)](https://app.netlify.com/sites/rock-paper-scissors-bis/deploys)
+
 ## Description
 
 Rock Paper Scissors is a gaming project.
@@ -9,6 +12,12 @@ First step is to choose your username.
 After that you can play as much as you want.
 
 On the right of the screen you can see your win rate etc.
+
+![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-1.png)
+
+![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-3.png)
+
+![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-2.png)
 
 ## Getting Started
 
@@ -62,3 +71,9 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Contact
+
+Aurélien RICHE - contact@aurelienriche.com
+
+Project Link: [Github link](https://github.com/thisaurel/rock-paper-scissors-game-angular)
