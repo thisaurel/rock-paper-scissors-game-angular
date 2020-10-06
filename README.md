@@ -1,8 +1,7 @@
 # Rock Paper Scissors Game
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+[![npm version](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/survey-monkey-streams)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/233ac41a-c3df-419f-883c-02bb2a137586/deploy-status)](https://app.netlify.com/sites/rock-paper-scissors-bis/deploys)
 
 ## Description
 
@@ -15,6 +14,12 @@ After that you can play as much as you want.
 Your current score is on the top of the screen.
 
 On the right of the screen you can see your win rate etc.
+
+![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-1.png)
+
+![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-3.png)
+
+![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-2.png)
 
 ## Getting Started
 
