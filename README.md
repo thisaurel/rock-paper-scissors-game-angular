@@ -1,6 +1,14 @@
 # Rock Paper Scissors Game
 
+## Description
 
+Rock Paper Scissors is a gaming project.
+You are playing against an AI.
+
+First step is to choose your username.
+After that you can play as much as you want.
+
+On the right of the screen you can see your win rate etc.
 
 ## Installation
 
