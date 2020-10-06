@@ -12,6 +12,8 @@ You are playing against an AI.
 First step is to choose your username.
 After that you can play as much as you want.
 
+Your current score is on the top of the screen.
+
 On the right of the screen you can see your win rate etc.
 
 ## Getting Started
