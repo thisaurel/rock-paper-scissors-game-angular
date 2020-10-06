@@ -1,5 +1,9 @@
 # Rock Paper Scissors Game
 
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
+
 ## Description
 
 Rock Paper Scissors is a gaming project.
@@ -62,3 +66,9 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Contact
+
+Aurélien RICHE - contact@aurelienriche.com
+
+Project Link: [Github link](https://github.com/thisaurel/rock-paper-scissors-game-angular)
