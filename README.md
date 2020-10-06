@@ -78,4 +78,4 @@ Please make sure to update tests as appropriate.
 
 Aurélien RICHE - contact@aurelienriche.com
 
-Project Link: [Github link](https://github.com/thisaurel/rock-paper-scissors-game-angular)
+Project Link: [Netlify link](https://rock-paper-scissors-bis.netlify.app/)
