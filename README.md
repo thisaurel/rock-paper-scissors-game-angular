@@ -17,9 +17,9 @@ On the right of the screen you can see your win rate etc.
 
 ![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-1.png)
 
-![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-3.png)
+![Username Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-3.png)
 
-![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-2.png)
+![Game Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-2.png)
 
 ## Getting Started
 
