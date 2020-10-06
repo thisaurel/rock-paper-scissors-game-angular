@@ -39,7 +39,12 @@ git clone https://github.com/thisaurel/rock-paper-scissors-game-angular.git
 npm install
 ```
 
-3. Install [Angular CLI](https://cli.angular.io/) to launch the server.
+3. Install [Angular CLI](https://cli.angular.io/)
+```sh
+npm install -g @angular/cli
+```
+
+4. Start the server
 
 ```bash
 ng serve --open # the flag '--open' is used to auto open a browser tab
