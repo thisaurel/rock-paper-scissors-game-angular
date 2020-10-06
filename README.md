@@ -25,17 +25,7 @@ On the right of the screen you can see your win rate etc.
 
 ### Prerequisites
 
-Use the package manager [npm](https://www.npmjs.com/) to install all the packages.
-
-```bash
-npm install
-```
-
-Then you have to install [Angular CLI](https://cli.angular.io/) to launch the server.
-
-```bash
-ng serve --open # the flag '--open' is used to auto open a browser tab
-```
+To use the package manager [npm](https://www.npmjs.com/) to install all the packages, you must install [Node.js](https://nodejs.org/en/download/).
 
 ### Installation
 
@@ -47,6 +37,12 @@ git clone https://github.com/thisaurel/rock-paper-scissors-game-angular.git
 2. Install NPM packages
 ```sh
 npm install
+```
+
+3. Install [Angular CLI](https://cli.angular.io/) to launch the server.
+
+```bash
+ng serve --open # the flag '--open' is used to auto open a browser tab
 ```
 
 ## Usage
