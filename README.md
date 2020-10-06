@@ -1,27 +1,81 @@
-# RockPaperScissorsGameAngular
+# Rock Paper Scissors Game
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+[![npm version](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/survey-monkey-streams)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/233ac41a-c3df-419f-883c-02bb2a137586/deploy-status)](https://app.netlify.com/sites/rock-paper-scissors-bis/deploys)
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Rock Paper Scissors is a gaming project.
+You are playing against an AI.
 
-## Code scaffolding
+First step is to choose your username.
+After that you can play as much as you want.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Your current score is on the top of the screen.
 
-## Build
+On the right of the screen you can see your win rate etc.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![Home Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-1.png)
 
-## Running unit tests
+![Username Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-3.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Game Page](https://aurelienriche.s3.eu-west-3.amazonaws.com/screenshot-2.png)
 
-## Running end-to-end tests
+## Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Prerequisites
 
-## Further help
+Use the package manager [npm](https://www.npmjs.com/) to install all the packages.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+npm install
+```
+
+Then you have to install [Angular CLI](https://cli.angular.io/) to launch the server.
+
+```bash
+ng serve --open # the flag '--open' is used to auto open a browser tab
+```
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/thisaurel/rock-paper-scissors-game-angular.git
+```
+
+2. Install NPM packages
+```sh
+npm install
+```
+
+## Usage
+
+To edit the project you can open it at its root with any IDE like IntelliJ IDEA or VSCode.
+
+This project is fully coded with Angular so you must have the base knowledges to edit it.
+
+## Roadmap
+
+See the [open issues](https://github.com/thisaurel/rock-paper-scissors-game-angular/issues) for a list of proposed features (and known issues).
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/myFeature`)
+3. Commit your Changes (`git commit -m 'Add some feature'`)
+4. Push to the Branch (`git push origin feature/myFeature`)
+5. Open a Pull Request
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Contact
+
+Aurélien RICHE - contact@aurelienriche.com
+
+Project Link: [Github link](https://github.com/thisaurel/rock-paper-scissors-game-angular)
