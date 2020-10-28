@@ -7,16 +7,13 @@ import {GameResultsInterface} from '../interfaces/game-results.interface';
 })
 export class GameService {
 
-  // tslint:disable-next-line:variable-name
+  // tslint:disable:variable-name
   private _connectedPlayer: string;
   private onPlayerConnect: EventEmitter<string> = new EventEmitter();
 
-  // tslint:disable-next-line:variable-name
   private _playerChoice: ItemsInterface;
-  // tslint:disable-next-line:variable-name
   private _computerChoice: ItemsInterface;
 
-  // tslint:disable-next-line:variable-name
   private _scoreBoard = new Array<GameResultsInterface>();
 
   constructor() { }
@@ -93,7 +90,7 @@ export class GameService {
     this.scoreBoard.sort(this.dynamicSort('percentage'));
   }
 
-  private dynamicSort(property): (a, b) => number {
+  private dynamicSort(property): (a: any, b: any) => number {
     let sortOrder = 1;
     if (property[0] === '-') {
       sortOrder = -1;
