@@ -37,4 +37,43 @@ describe('GameService', () => {
     expect(itemsList).toBeInstanceOf(Object);
   });
 
+  it('result algorithm should be valid when user choice is "rock"', () => {
+    service.setPlayerChoice(service.items[0]); // rock
+
+    service.setComputerChoice(service.items[0]); // rock
+    expect(service.isPlayerWins()).toBeNull();
+
+    service.setComputerChoice(service.items[1]); // paper
+    expect(service.isPlayerWins()).toBeFalse();
+
+    service.setComputerChoice(service.items[2]); // scissors
+    expect(service.isPlayerWins()).toBeTrue();
+  });
+
+  it('result algorithm should be valid when user choice is "paper"', () => {
+    service.setPlayerChoice(service.items[1]); // paper
+
+    service.setComputerChoice(service.items[0]); // rock
+    expect(service.isPlayerWins()).toBeTrue();
+
+    service.setComputerChoice(service.items[1]); // paper
+    expect(service.isPlayerWins()).toBeNull();
+
+    service.setComputerChoice(service.items[2]); // scissors
+    expect(service.isPlayerWins()).toBeFalse();
+  });
+
+  it('result algorithm should be valid when user choice is "scissors"', () => {
+    service.setPlayerChoice(service.items[2]); // paper
+
+    service.setComputerChoice(service.items[0]); // rock
+    expect(service.isPlayerWins()).toBeFalse();
+
+    service.setComputerChoice(service.items[1]); // paper
+    expect(service.isPlayerWins()).toBeTrue();
+
+    service.setComputerChoice(service.items[2]); // scissors
+    expect(service.isPlayerWins()).toBeNull();
+  });
+
 });
