@@ -13,5 +13,5 @@ before_script:
 
 script:
 - ng lint
-- ng test
+- npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 - ng build --prod
