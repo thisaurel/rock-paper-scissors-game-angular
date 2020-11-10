@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { GameComponent } from './game.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {GameService} from '../../services/game.service';
+import {GameService} from '@services/game.service';
 
 describe('GameComponent', () => {
   let component: GameComponent;
