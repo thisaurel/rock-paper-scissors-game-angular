@@ -1,8 +1,7 @@
-import {TestBed, async, ComponentFixture} from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import {HomeComponent} from './components/home/home.component';
-import {GameService} from './services/game.service';
+import { GameService } from '@services/game.service';
 
 describe('AppComponent', () => {
   let component: AppComponent;

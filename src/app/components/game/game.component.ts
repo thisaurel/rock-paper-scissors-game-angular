@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {GameService} from '../../services/game.service';
-import {ItemsInterface} from '../../interfaces/items.interface';
+import {GameService} from '@services/game.service';
+import {ItemsInterface} from '@interfaces/items.interface';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -45,7 +45,6 @@ export class GameComponent implements OnInit {
     if (this.winner !== '') { return; }
     this.visualChanges();
     this.gameService.callPlayerChoice(item);
-    console.log(this.gameService.isPlayerWins());
     switch (this.gameService.isPlayerWins()) {
       case true:
         this.winner = 'You win ! 👏👏';

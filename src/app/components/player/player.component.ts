@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { GameService } from '../../services/game.service';
+import { GameService } from '@services/game.service';
 
 @Component({
   selector: 'app-player',
@@ -26,7 +26,6 @@ export class PlayerComponent implements OnInit {
 
   onSubmit() {
     const username = this.authForm.value.username;
-    console.log(username);
     this.gameService.setPlayerName(username);
     if (this.gameService.connectedPlayer) {
       this.router.navigate(['/game']);

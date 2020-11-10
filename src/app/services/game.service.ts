@@ -1,6 +1,6 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import { ItemsInterface } from '../interfaces/items.interface';
-import {GameResultsInterface} from '../interfaces/game-results.interface';
+import { ItemsInterface } from '@interfaces/items.interface';
+import { GameResultsInterface } from '@interfaces/game-results.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -51,11 +51,6 @@ export class GameService {
   }
 
   public isPlayerWins(): boolean {
-    console.group('Results');
-    console.log(`Player: ${this.getPlayerChoice.name}`);
-    console.log(`Computer: ${this.getComputerChoice.name}`);
-    console.groupEnd();
-
     if (this.getPlayerChoice.drawWith === this.getComputerChoice.drawWith) {
       return this.draw();
     }
