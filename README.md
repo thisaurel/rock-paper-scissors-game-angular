@@ -1,4 +1,4 @@
-# Rock Paper Scissors Game
+# The Rock Paper Scissors Game
 
 [![npm version](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/survey-monkey-streams)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/233ac41a-c3df-419f-883c-02bb2a137586/deploy-status)](https://app.netlify.com/sites/rock-paper-scissors-bis/deploys)
